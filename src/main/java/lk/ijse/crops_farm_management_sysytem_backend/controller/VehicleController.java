@@ -1,18 +1,18 @@
 package lk.ijse.crops_farm_management_sysytem_backend.controller;
 
 import jakarta.validation.Valid;
-import lk.ijse.crop_monitoring_systembackend.customResponse.ErrorResponse;
-import lk.ijse.crop_monitoring_systembackend.customResponse.Response;
-import lk.ijse.crop_monitoring_systembackend.dto.VehicleDTO;
-import lk.ijse.crop_monitoring_systembackend.exception.DataPersistFailedException;
-import lk.ijse.crop_monitoring_systembackend.exception.NotFoundException;
-import lk.ijse.crop_monitoring_systembackend.service.VehicleService;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.Response;
+import lk.ijse.crops_farm_management_sysytem_backend.dto.VehicleDTO;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
+import lk.ijse.crops_farm_management_sysytem_backend.service.VehicleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

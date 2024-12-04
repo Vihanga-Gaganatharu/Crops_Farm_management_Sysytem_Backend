@@ -1,11 +1,11 @@
 package lk.ijse.crops_farm_management_sysytem_backend.service.impl;
 
-import lk.ijse.crop_monitoring_systembackend.dao.VehicleDAO;
-import lk.ijse.crop_monitoring_systembackend.dto.VehicleDTO;
-import lk.ijse.crop_monitoring_systembackend.entity.VehicleEntity;
-import lk.ijse.crop_monitoring_systembackend.exception.NotFoundException;
-import lk.ijse.crop_monitoring_systembackend.service.VehicleService;
-import lk.ijse.crop_monitoring_systembackend.util.MappingUtil;
+import lk.ijse.crops_farm_management_sysytem_backend.dao.VehicleDAO;
+import lk.ijse.crops_farm_management_sysytem_backend.dto.VehicleDTO;
+import lk.ijse.crops_farm_management_sysytem_backend.entity.VehicleEntity;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
+import lk.ijse.crops_farm_management_sysytem_backend.service.VehicleService;
+import lk.ijse.crops_farm_management_sysytem_backend.util.MappingUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
