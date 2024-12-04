@@ -1,12 +1,12 @@
 package lk.ijse.crops_farm_management_sysytem_backend.controller;
 
-import lk.ijse.crop_monitoring_systembackend.dto.UserDTO;
-import lk.ijse.crop_monitoring_systembackend.exception.DataPersistFailedException;
-import lk.ijse.crop_monitoring_systembackend.jwtModel.JWTAuthResponse;
-import lk.ijse.crop_monitoring_systembackend.jwtModel.SignIn;
-import lk.ijse.crop_monitoring_systembackend.service.AuthenticationService;
-import lk.ijse.crop_monitoring_systembackend.service.JWTService;
-import lk.ijse.crop_monitoring_systembackend.service.UserService;
+import lk.ijse.crops_farm_management_sysytem_backend.dto.UserDTO;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
+import lk.ijse.crops_farm_management_sysytem_backend.jwtModel.JWTAuthResponse;
+import lk.ijse.crops_farm_management_sysytem_backend.jwtModel.SignIn;
+import lk.ijse.crops_farm_management_sysytem_backend.service.AuthenticationService;
+import lk.ijse.crops_farm_management_sysytem_backend.service.JWTService;
+import lk.ijse.crops_farm_management_sysytem_backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
