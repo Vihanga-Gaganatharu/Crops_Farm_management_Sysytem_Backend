@@ -1,13 +1,13 @@
 package lk.ijse.crops_farm_management_sysytem_backend.controller;
 
 import jakarta.validation.Valid;
-import lk.ijse.crop_monitoring_systembackend.customResponse.ErrorResponse;
-import lk.ijse.crop_monitoring_systembackend.customResponse.Response;
-import lk.ijse.crop_monitoring_systembackend.dto.EquipmentDTO;
-import lk.ijse.crop_monitoring_systembackend.exception.DataPersistFailedException;
-import lk.ijse.crop_monitoring_systembackend.exception.NotFoundException;
-import lk.ijse.crop_monitoring_systembackend.service.EquipmentService;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.ErrorResponse;
+import lk.ijse.crops_farm_management_sysytem_backend.dto.EquipmentDTO;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
+import lk.ijse.crops_farm_management_sysytem_backend.service.EquipmentService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -78,7 +78,7 @@ public class EquipmentController {
                 logger.info("Equipment found successfully: " + equipmentDTO);
                 return equipmentDTO;
             } catch (NotFoundException e) {
-                return new ErrorResponse ("Equipment not found with id: " + id, HttpStatus.NOT_FOUND);
+                return new ErrorResponse("Equipment not found with id: " + id, HttpStatus.NOT_FOUND);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.severe("Failed to find equipment with id: " + id);
