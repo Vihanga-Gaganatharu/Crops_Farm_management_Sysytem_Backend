@@ -1,7 +1,7 @@
 package lk.ijse.crops_farm_management_sysytem_backend.dto;
 
 import jakarta.validation.constraints.*;
-import lk.ijse.crop_monitoring_systembackend.customResponse.Response;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
