@@ -1,7 +1,7 @@
 package lk.ijse.crops_farm_management_sysytem_backend.util;
 
-import lk.ijse.crop_monitoring_systembackend.dto.*;
-import lk.ijse.crop_monitoring_systembackend.entity.*;
+import lk.ijse.crops_farm_management_sysytem_backend.dto.*;
+import lk.ijse.crops_farm_management_sysytem_backend.entity.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
