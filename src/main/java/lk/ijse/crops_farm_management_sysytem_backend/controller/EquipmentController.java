@@ -7,7 +7,6 @@ import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailed
 import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
 import lk.ijse.crops_farm_management_sysytem_backend.service.EquipmentService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -71,21 +70,21 @@ public class EquipmentController {
 
     @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_SCIENTIST') or hasRole('ROLE_ADMINISTRATIVE')")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response searchEquipment(@PathVariable("id") String id) {
+    public ResponseEntity<?> searchEquipment(@PathVariable("id") String id) {
         if (id != null) {
             try {
                 EquipmentDTO equipmentDTO = equipmentService.searchEquipment(id);
                 logger.info("Equipment found successfully: " + equipmentDTO);
-                return equipmentDTO;
+                return new ResponseEntity<>(equipmentDTO, HttpStatus.OK);
             } catch (NotFoundException e) {
-                return new ErrorResponse("Equipment not found with id: " + id, HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(new ErrorResponse("Equipment not found with id: " + id, HttpStatus.NOT_FOUND), HttpStatus.NOT_FOUND);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.severe("Failed to find equipment with id: " + id);
-                return new ErrorResponse("Failed to find equipment with id: " + id, HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(new ErrorResponse("Failed to find equipment with id: " + id, HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR);
             }
         } else {
-            return new ErrorResponse("Invalid equipment id", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new ErrorResponse("Invalid equipment id", HttpStatus.BAD_REQUEST), HttpStatus.BAD_REQUEST);
         }
     }
 
