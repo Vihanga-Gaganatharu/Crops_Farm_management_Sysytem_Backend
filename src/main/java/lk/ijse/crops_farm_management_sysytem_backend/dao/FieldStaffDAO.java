@@ -1,6 +1,6 @@
 package lk.ijse.crops_farm_management_sysytem_backend.dao;
 
-import lk.ijse.crop_monitoring_systembackend.entity.FieldStaffEntity;
+import lk.ijse.crops_farm_management_sysytem_backend.entity.FieldStaffEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
