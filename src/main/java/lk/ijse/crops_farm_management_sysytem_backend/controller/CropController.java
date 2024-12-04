@@ -10,7 +10,6 @@ import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException
 import lk.ijse.crops_farm_management_sysytem_backend.service.CropService;
 import lk.ijse.crops_farm_management_sysytem_backend.util.AppUtil;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -89,8 +88,8 @@ public class CropController {
             @RequestPart("fields") String fields) {
         try {
             byte[] img = cropImg.getBytes();
-            String base64Img = AppUtil.toBase64Pic(img);            
-           
+            String base64Img = AppUtil.toBase64Pic(img);
+
             ObjectMapper objectMapper = new ObjectMapper();
             List<String> fieldList = objectMapper.readValue(fields, new TypeReference<>() {});
             CropDTO cropDTO = new CropDTO();
@@ -115,14 +114,14 @@ public class CropController {
 
     @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_SCIENTIST') or hasRole('ROLE_ADMINISTRATIVE')")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response searchCrop(@PathVariable String id) {
+    public ResponseEntity<?> searchCrop(@PathVariable String id) {
         try {
             CropDTO cropDTO = cropService.searchCrop(id);
             logger.info("Crop searched successfully: " + cropDTO.getCommonName());
-            return cropDTO;
+            return new ResponseEntity<>(cropDTO, HttpStatus.OK);
         } catch (Exception e) {
             logger.severe("Failed to search crop with id: " + id);
-            return new ErrorResponse("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new ErrorResponse("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
