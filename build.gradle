@@ -32,6 +32,8 @@ dependencies {
     implementation group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '3.2.1'
     implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.1.0'
     implementation group: 'org.springframework.security', name: 'spring-security-core', version: '6.3.4'
+    implementation group: 'org.springframework.security', name: 'spring-security-config', version: '6.3.4'
+    implementation group: 'org.springframework.security', name: 'spring-security-web', version: '6.3.4'
     implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.6'
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.12.6'
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version:'0.12.6'
