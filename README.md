@@ -64,7 +64,7 @@ Green Shadow (Pvt) Ltd. is a mid-scale farm specializing in root crops and cerea
 
 ### Prerequisites
 - **Frontend**: Modern web browser, text editor/IDE (e.g., Visual Studio Code).
-- **Backend**: Java 17+, MySQL 8+, Maven 3.6+.
+- **Backend**: Java 17+, MySQL 8+, Gradle,
 
 ### Backend Setup
 1. Clone the repository:
