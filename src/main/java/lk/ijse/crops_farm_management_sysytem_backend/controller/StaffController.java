@@ -6,13 +6,13 @@ import lk.ijse.crops_farm_management_sysytem_backend.dto.StaffDTO;
 import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
 import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
 import lk.ijse.crops_farm_management_sysytem_backend.service.StaffService;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.ErrorResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -78,7 +78,7 @@ public class StaffController {
                 logger.info("Staff found with id: " + id);
                 return staffDTO;
             } catch (NotFoundException e) {
-                return new ErrorResponse("Staff not found with id: " + id, HttpStatus.NOT_FOUND);
+                return new lk.ijse.crops_farm_management_sysytem_backend.customResponse.ErrorResponse("Staff not found with id: " + id, HttpStatus.NOT_FOUND);
             } catch (Exception e) {
                 logger.severe("Failed to find staff with id: " + id);
                 return new ErrorResponse("Internal server error", HttpStatus.INTERNAL_SERVER_ERROR);

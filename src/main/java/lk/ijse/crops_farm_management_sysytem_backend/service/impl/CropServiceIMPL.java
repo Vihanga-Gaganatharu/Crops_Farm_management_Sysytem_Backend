@@ -5,6 +5,7 @@ import lk.ijse.crops_farm_management_sysytem_backend.dao.FieldCropDAO;
 import lk.ijse.crops_farm_management_sysytem_backend.dto.CropDTO;
 import lk.ijse.crops_farm_management_sysytem_backend.dto.FieldCropDTO;
 import lk.ijse.crops_farm_management_sysytem_backend.entity.CropEntity;
+import lk.ijse.crops_farm_management_sysytem_backend.entity.FieldEntity;
 import lk.ijse.crops_farm_management_sysytem_backend.entity.FieldCropEntity;
 import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
 import lk.ijse.crops_farm_management_sysytem_backend.service.CropService;

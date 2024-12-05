@@ -1,6 +1,7 @@
 package lk.ijse.crops_farm_management_sysytem_backend.controller;
 
 import jakarta.validation.Valid;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.ErrorResponse;
 import lk.ijse.crops_farm_management_sysytem_backend.customResponse.Response;
 import lk.ijse.crops_farm_management_sysytem_backend.dto.VehicleDTO;
 import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
@@ -12,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -3,19 +3,19 @@ package lk.ijse.crops_farm_management_sysytem_backend.controller;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.ErrorResponse;
+import lk.ijse.crops_farm_management_sysytem_backend.customResponse.Response;
 import lk.ijse.crops_farm_management_sysytem_backend.dto.FieldDTO;
 import lk.ijse.crops_farm_management_sysytem_backend.exception.DataPersistFailedException;
+import lk.ijse.crops_farm_management_sysytem_backend.exception.NotFoundException;
 import lk.ijse.crops_farm_management_sysytem_backend.service.FieldService;
 import lk.ijse.crops_farm_management_sysytem_backend.util.AppUtil;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -119,7 +119,7 @@ public class FieldController {
                 FieldDTO fieldDTO = fieldService.searchField(id);
                 logger.info("Field found with id: " + id);
                 return fieldDTO;
-            } catch (ChangeSetPersister.NotFoundException e) {
+            } catch (NotFoundException e) {
                 return new ErrorResponse("Field not found with id: " + id, HttpStatus.NOT_FOUND);
             } catch (Exception e) {
                 logger.severe("Failed to find field with id: " + id);
@@ -155,7 +155,7 @@ public class FieldController {
                 } else {
                     return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
                 }
-            } catch (ChangeSetPersister.NotFoundException e) {
+            } catch (NotFoundException e) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } catch (Exception e) {
                 logger.severe("Failed to delete field: " + id);
