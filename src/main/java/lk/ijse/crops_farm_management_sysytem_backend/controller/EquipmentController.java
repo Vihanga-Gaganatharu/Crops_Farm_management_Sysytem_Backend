@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.logging.Logger;
 
-@RestController
-@RequestMapping("/api/v1/equipment")
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController //request response handel karanawa
+@RequestMapping("/api/v1/equipment") // path eka define karanna
+@RequiredArgsConstructor  //constructor eka generate karanna
+@CrossOrigin(origins = "*", allowedHeaders = "*") //frontend backend connect kara;la data yawanna
 public class EquipmentController {
     @Autowired
     private EquipmentService equipmentService;

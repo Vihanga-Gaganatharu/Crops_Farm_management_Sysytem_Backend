@@ -64,7 +64,7 @@ public class AuthController {
         return ResponseEntity.ok(authenticationService.signIn(sign));
     }
 
-    @PostMapping("/validate-token")
+    @PostMapping("/validate-token")  // frontend eken ewan ekayi api genaratore karana ekayi 2ma ekada kiyala check karanwa
     public ResponseEntity<?> validateToken(@RequestHeader("Authorization") String token) {
         try {
             if (token.startsWith("Bearer ")) {

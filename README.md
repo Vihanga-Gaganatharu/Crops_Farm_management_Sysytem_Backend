@@ -70,3 +70,10 @@ Green Shadow (Pvt) Ltd. is a mid-scale farm specializing in root crops and cerea
 1. Clone the repository:
    ```bash
    https://github.com/Vihanga-Gaganatharu/Crops_Farm_management_Sysytem_Backend.git
+
+
+## Postman
+
+### Postman Collection Documentation
+  url
+   https://documenter.getpostman.com/view/35385296/2sAYBbeUXs

@@ -5,4 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EquipmentDAO extends JpaRepository<EquipmentEntity, String> {}
+public interface EquipmentDAO extends JpaRepository<EquipmentEntity, String> {} //entity namayi praimanry ky eke dATA TYPE EKAYI

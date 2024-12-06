@@ -34,7 +34,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         security.csrf(AbstractHttpConfigurer::disable).cors(Customizer.withDefaults())
-                .authorizeRequests(req -> req.requestMatchers("api/v1/auth/**").permitAll()
+                .authorizeRequests(req -> req.requestMatchers("api/v1/auth/**").permitAll() // token eka nathuwa ahaki
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
